@@ -10,11 +10,11 @@ struct ToDoList {
 }
 
 impl ToDoList {
-    fn new() -> ToDoList {
+    fn _new() -> ToDoList {
         ToDoList { _tasks: Vec::new() }
     }
 
-    fn add_task(&mut self, _description: &str) -> Task {
+    fn _add_task(&mut self, _description: &str) -> Task {
         let _new_task = Task {
             _id: self._tasks.len() + 1,
             _description: String::from(_description),
@@ -25,7 +25,7 @@ impl ToDoList {
         _new_task
     }
 
-    fn complete_task(&mut self, _id: usize) -> Option<&Task> {
+    fn _complete_task(&mut self, _id: usize) -> Option<&Task> {
         if let Some(_task) = self._tasks.iter_mut().find(|t| t._id == _id) {
             _task._is_completed = true;
             Some(_task)
@@ -34,16 +34,24 @@ impl ToDoList {
         }
     }
 
-    fn list_tasks(&self) {
+    fn _list_tasks(&self) {
         for _task in &self._tasks {
             println!(
-                "ID: {}, Description: {}, Is Completed: {}",
-                _task._id, _task._description, _task._is_completed
+                "{:?}", _task
             );
         }
     }
-}
+}   
 
 fn main() {
+    let mut todo_list = ToDoList::_new();
 
+    let _task1 = todo_list._add_task("Learn Rust");
+    let _task2 = todo_list._add_task("Learn Python");
+    let _task3 = todo_list._add_task("Learn C++");
+
+    todo_list._list_tasks();
+
+    todo_list._complete_task(_task1._id);
+    todo_list._list_tasks();
 }

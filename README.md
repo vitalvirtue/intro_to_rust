@@ -1,10 +1,10 @@
-Task Details
+**Task Details**
 
 In this homework, you will create a simple to-do list in Rust that can perform basic listing.
 
-Steps:
+**Steps**:
 
-Create a struct called Task with the following fields:
+*Create a struct called Task with the following fields*:
 
     id (an integer representing the task ID)
 
@@ -16,7 +16,7 @@ Create a struct called Task with the following fields:
 
 ---
 
-Implement the following functions:
+*Implement the following functions*:
 
     add_task(description: &str) -> Task: This function should take a task description as an argument, create a new Task instance with a unique ID, mark it as not completed, add it to the vector, and return the created Task.
 
@@ -26,7 +26,7 @@ Implement the following functions:
 
 ---
 
-Checklist:
+**Checklist**:
 
     Define the Task struct with the specified fields.
 
